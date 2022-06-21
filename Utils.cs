@@ -1,4 +1,6 @@
+using psw_ftn.Dtos;
 using psw_ftn.Dtos.CheckUpDtos;
+using psw_ftn.Dtos.FeedbackDtos;
 using psw_ftn.Dtos.UserDtos;
 
 namespace Psw.UnitTests
@@ -46,5 +48,20 @@ namespace Psw.UnitTests
             EndTime = DateTime.Now.AddHours(1)
         };
     }
+
+    public GetFeedbackDto CreateGetFeedbackDto (GradeDto grade, string comment, int feedbackId, bool incognito,bool isForDisplay, PatientDto patient)
+    {
+        return new()
+        {
+            Grade = grade,
+            Comment = comment,
+            FeedbackId = feedbackId,
+            Incognito = incognito,
+            IsForDisplay = isForDisplay,
+            Patient = patient
+        };
     }
+    
+    }      
+
 }
